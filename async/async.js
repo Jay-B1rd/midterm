@@ -35,7 +35,7 @@ class CharacterService {
   getCharacter(characterId) {
     return new Promise((resolve, reject) => {
       if (characterId) {
-        let character = characters.find(char => char.id == char.id);
+        let character = characters.find(char => characterId == char.id);
         resolve(character);
       } else {
         reject('something went wrong');
