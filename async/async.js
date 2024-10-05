@@ -28,7 +28,7 @@ let characters = [
 class CharacterService {
   constructor() {}
   getAllCharacters() {
-    return new Promise((reject, resolve) => {
+    return new Promise((resolve) => {
       resolve(characters);
     });
   }
@@ -46,9 +46,9 @@ class CharacterService {
     return new Promise((resolve, reject) => {
       if (type) {
         let filteredCharacters = characters.filter(char => char.type == type);
-        reject('something went wrong');
-      } else {
         resolve(filteredCharacters);
+      } else {
+        reject('something went wrong');
       }
     });
   }
